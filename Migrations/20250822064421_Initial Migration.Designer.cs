@@ -12,8 +12,8 @@ using WebApStudentEnrolment.Data;
 namespace WebApStudentEnrolment.Migrations
 {
     [DbContext(typeof(StudentEnrolmentContext))]
-    [Migration("20250821055508_InitialCreation")]
-    partial class InitialCreation
+    [Migration("20250822064421_Initial Migration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

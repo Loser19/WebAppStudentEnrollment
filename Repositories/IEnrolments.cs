@@ -3,17 +3,13 @@ using WebApStudentEnrolment.Models;
 
 namespace WebApStudentEnrolment.Repositories
 {
-    public interface IEnrolments
-    {
-        int Count { get; }
-        // Task<IActionResult> AddEnrolment(int enrolmentId, int studentId, int courseId, DateTime enrolmentDate);
-        Task<IActionResult> AddEnrolment(Enrolment enrolment);
-        Task<IActionResult> GetEnrolmentById(int enrolmentId);
-        Task<IActionResult> GetAllEnrolments();
-        Task<IActionResult> UpdateEnrolment(int enrolmentId);
-        Task<IActionResult> DeleteEnrolment(int enrolmentId);
-
-
-
-    }
+        public interface IEnrolments
+        {
+            int Count { get; }
+            Task<Enrolment> AddEnrolment(Enrolment enrolment);
+            Task<Enrolment?> GetEnrolmentById(int enrolmentId);
+            Task<IEnumerable<Enrolment>> GetAllEnrolments();
+            Task<Enrolment?> UpdateEnrolment(int enrolmentId);
+            Task<Enrolment> DeleteEnrolment(int enrolmentId);
+        }
 }

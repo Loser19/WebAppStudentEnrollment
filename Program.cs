@@ -10,6 +10,7 @@ builder.Services.AddDbContext<StudentEnrolmentContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("EnrolmentConnection")));
 builder.Services.AddMvc();
 
+
 // Register repositories
 
 builder.Services.AddTransient<IStudent, StudentRepo>();
