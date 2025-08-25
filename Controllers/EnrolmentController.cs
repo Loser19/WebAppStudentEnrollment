@@ -65,7 +65,7 @@ namespace WebApStudentEnrolment.Controllers
             var enrolment = await _enrolmentRepo.GetEnrolmentById(id);
             if (enrolment == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
             return View(enrolment);
         }
@@ -83,7 +83,7 @@ namespace WebApStudentEnrolment.Controllers
             {
                 try
                 {
-                    await _enrolmentRepo.UpdateEnrolment(id);
+                    await _enrolmentRepo.UpdateEnrolment(id,enrolment);
                 }
                 catch (DbUpdateConcurrencyException)
                 {

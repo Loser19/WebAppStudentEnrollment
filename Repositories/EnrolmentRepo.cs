@@ -48,7 +48,7 @@ namespace WebApStudentEnrolment.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Enrolment> UpdateEnrolment(int enrolmentId)
+        public async Task<Enrolment> UpdateEnrolment(int enrolmentId,Enrolment enrolment)
         {
             // Implementation for updating an enrolment
             var existingEnrolment = await _context.Enrolments.FindAsync(enrolmentId);
@@ -56,6 +56,9 @@ namespace WebApStudentEnrolment.Repositories
             {
                 return existingEnrolment; // Return 404 if not found
             }
+            existingEnrolment.EnrolmentDate = enrolment.EnrolmentDate;
+            existingEnrolment.StudentId = enrolment.StudentId;
+            existingEnrolment.CourseId = enrolment.CourseId;
             // Update properties as needed
             await _context.SaveChangesAsync();
             return existingEnrolment; // Return an appropriate result, e.g., Ok or NoContent

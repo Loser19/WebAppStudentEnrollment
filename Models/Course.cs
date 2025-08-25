@@ -8,6 +8,7 @@ namespace WebApStudentEnrolment.Models
         public int Id { get;set; }
 
         [Required]
+        [Display (Name = "Course Title")]
         public string Name { get; set; } = string.Empty;
 
         [Required]
